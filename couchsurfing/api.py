@@ -101,7 +101,7 @@ class Api(object):
         r = self._session.get(CS_URL + path)
 
         if (r.status_code != 200):
-            raise RequestError
+            raise RequestError('request: {}'.format(str(r)))
 
         return r.json()
 
